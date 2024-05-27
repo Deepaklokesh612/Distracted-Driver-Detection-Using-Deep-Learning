@@ -44,6 +44,7 @@ def parse_contents(contents):
     Output('output-image-upload', 'children'),
     [Input('upload-image', 'contents')]
 )
+
 def update_output(contents):
     if contents is not None:
         image = parse_contents(contents)
