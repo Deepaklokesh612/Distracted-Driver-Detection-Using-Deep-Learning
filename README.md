@@ -16,12 +16,12 @@ Given a dataset of 2D dashboard camera images, an algorithm needs to be develope
 
 # Approach 
 
-### 1. Problem Definition
+## 1. Problem Definition
 
 Distracted driving is a significant cause of road accidents. The goal of this project is to develop a system that can automatically detect whether a driver is distracted using images. The system should be able to classify images into different categories of distractions, such as texting, talking on the phone, eating, etc.
 
-### 2. Data Collection
-#### 2.1. Dataset
+## 2. Data Collection
+### 2.1. Dataset
 Source: Use a publicly available dataset, such as the "State Farm Distracted Driver Detection" dataset from Kaggle.
 
 Categories: The dataset should have labeled images of drivers in various states such as:
@@ -42,8 +42,8 @@ Categories: The dataset should have labeled images of drivers in various states 
 
 8) Talking to passenger
 
-### 3. Data Preprocessing
-#### 3.1. Data Augmentation
+## 3. Data Preprocessing
+### 3.1. Data Augmentation
 Techniques: Apply random transformations to increase the diversity of the training data. Common techniques include:
 Horizontal flipping
 Random cropping
@@ -51,44 +51,44 @@ Rotation
 Scaling
 Brightness and contrast adjustment
 
-#### 3.2. Normalization
+### 3.2. Normalization
 Normalize pixel values to a range suitable for the model (e.g., [0, 1]).
 
-### 4. Model Selection
-#### 4.1. Convolutional Neural Networks (CNNs)
+## 4. Model Selection
+### 4.1. Convolutional Neural Networks (CNNs)
 CNNs are highly effective for image classification tasks due to their ability to capture spatial hierarchies in images.
 Consider using pre-trained models like VGG16, ResNet50, or MobileNetV2, which can be fine-tuned for this specific task.
 
-### 5. Model Training
-#### 5.1. Transfer Learning
+## 5. Model Training
+### 5.1. Transfer Learning
 Pre-trained Models: Use pre-trained weights from models trained on large datasets like ImageNet.
 Fine-tuning: Fine-tune the model on the distracted driver dataset. This involves freezing some of the initial layers and training the last few layers on the new dataset.
 
-#### 5.2. Custom Model
+### 5.2. Custom Model
 Alternatively, design a custom CNN architecture tailored to the dataset.
 
-#### 5.3. Hyperparameter Tuning
+### 5.3. Hyperparameter Tuning
 Experiment with different learning rates, batch sizes, and optimizers (e.g., Adam, SGD).
 Use techniques like cross-validation to find the optimal set of hyperparameters.
 
-### 6. Evaluation
-#### 6.1. Metrics
+## 6. Evaluation
+### 6.1. Metrics
 Use metrics like accuracy, precision, recall, and F1-score to evaluate the model's performance.
 Plot confusion matrices to understand the misclassification patterns.
 
-#### 6.2. Validation
+### 6.2. Validation
 Split the data into training, validation, and test sets.
 Monitor performance on the validation set to avoid overfitting.
 
-### 7. Deployment
-#### 7.1. Web Interface
+## 7. Deployment
+### 7.1. Web Interface
 Framework: Use Dash to create a web application.
 Functionality:
 Upload image files.
 Display uploaded images.
 Classify the images and display results.
 
-### Following are needed tasks for the development of an algorithm:
+## Following are needed tasks for the development of an algorithm:
 
 1) Download and preprocess the driver images
 
@@ -116,7 +116,7 @@ The deep learning model used for this project is a pre-trained convolutional neu
 
 Install required Python Libraries by pip install -r requirements.txt
 
-### Acknowledgements
+# Acknowledgements
 The project is inspired by the need for road safety and reducing accidents caused by distracted driving.
 
 Special thanks to the open-source community for providing valuable resources and tools.
