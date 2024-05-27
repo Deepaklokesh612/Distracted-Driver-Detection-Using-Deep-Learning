@@ -5,7 +5,6 @@ from predictionOnImage import return_prediction
 from PIL import Image
 import io
 import base64
-import random
 
 app = dash.Dash(__name__)
 
@@ -50,7 +49,7 @@ def update_output(contents):
         image = parse_contents(contents)
         return html.Div([
             html.H5("Uploaded Image:"),
-            html.Img(src=contents, style={'width': '50%'}),
+            html.Img(src=contents, style={'width': '30%'}),  # Adjust width to make the image smaller
         ])
 
 @app.callback(
@@ -62,21 +61,13 @@ def classify_image(n_clicks, contents):
     if n_clicks is not None and contents is not None:
         image = parse_contents(contents)
         predictions = return_prediction(image)
-        RANDOM_NUM = random.choice([
-            "TN 19N 2046", "KL 23H 3876", "MH 23N 9986", "TN 01N 1987", "TN 19N 2046",
-            "TN 13N 2032", "TN 19N 2036", "TN 19N 2046", "KL 19N 2046", "KL 10N 2146",
-            "KL 29N 2056", "KL 19N 9876", "MH 39N 2046", "TN 15N 2046", "TN 79N 1997",
-            "TN 73N 2046", "TN 09N 9999", "TN 16N 2046", "TN 12N 2046"
-        ])
-        state = "TAMILNADU" if RANDOM_NUM[:2]=="TN" else ("KERALA" if RANDOM_NUM[:2]=="KL" else "MAHARASTRA")
         return html.Div([
             html.H5("Classified", style={'font-size': '24px', 'font-weight': 'bold', 'color': 'green'}),  # Display "Classified" in green
             html.Hr(),  # Add horizontal line for separation
-            html.H5("Predictions:", style={'font-size': '24px', 'font-weight': 'bold'}),  # Bigger and bold
-            html.Pre(predictions),
-            html.P("Vehicle number : " + RANDOM_NUM),
-            html.P("STATE : " + state),
-            html.P("Driver Phone number : +91 8883088778")
+            html.Div([
+                html.H5("Predictions: ", style={'font-size': '24px', 'font-weight': 'bold', 'display': 'inline'}),  # Inline style
+                html.Pre(predictions, style={'display': 'inline'})  # Predictions inline with the heading
+            ])
         ])
 
 if __name__ == '__main__':
