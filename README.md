@@ -14,6 +14,14 @@ This project aims to develop a system that detects distracted drivers using deep
 
 Given a dataset of 2D dashboard camera images, an algorithm needs to be developed to classify each driver's behaviour and determine if they are driving attentively, wearing their seatbelt, or taking a selfie with their friends in the backseat etc..? This can then be used to automatically detect drivers engaging in distracted behaviours from dashboard cameras.
 
+### Following are needed tasks for the development of an algorithm:
+
+1) Download and preprocess the driver images
+
+2) Build and train the model to classify the driver images
+
+3) Test the model and further improve the model using different techniques.
+
 # Approach 
 
 ## 1. Problem Definition
@@ -88,14 +96,6 @@ Upload image files.
 Display uploaded images.
 Classify the images and display results.
 
-## Following are needed tasks for the development of an algorithm:
-
-1) Download and preprocess the driver images
-
-2) Build and train the model to classify the driver images
-
-3) Test the model and further improve the model using different techniques.
-
 # Model Details
 
 The deep learning model used for this project is a pre-trained convolutional neural network (CNN) and VGG16 fine-tuned for the task of distracted driver detection. The model is capable of classifying images into multiple categories based on the type of distraction.
@@ -111,10 +111,8 @@ The deep learning model used for this project is a pre-trained convolutional neu
 # Prerequisites
 
 1) Python 3.10
-
-2) Required Python packages:
-
-Install required Python Libraries by pip install -r requirements.txt
+2) Required Python packages: Install with pip install -r requirements.txt
+3) Dataset: Download the dataset from [[Link](https://www.kaggle.com/competitions/state-farm-distracted-driver-detection/data?select=imgs)] and place it in the appropriate directory.
 
 # Acknowledgements
 The project is inspired by the need for road safety and reducing accidents caused by distracted driving.
